@@ -43,6 +43,13 @@
     right: 10px;
     cursor: pointer;
   }
+
+  .close2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
   
   .scrollable {
     max-height: 400px; /* Set a maximum height to enable scrolling */
@@ -84,11 +91,11 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
+              <a class="sidebar-link" href="Demand_fleet.html" aria-expanded="false">
                 <span>
-                  <i class="ti ti-alert-circle"></i>
+                  <i class="ti ti-arrow-up-right"></i>
                 </span>
-                <span class="hide-menu">HSN & Legal</span>
+                <span class="hide-menu">Demand Fleet</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -96,15 +103,15 @@
                 <span>
                   <i class="ti ti-cards"></i>
                 </span>
-                <span class="hide-menu">Process Flow</span>
+                <span class="hide-menu">Payout</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
-                  <i class="ti ti-basket"></i>
+                  <i class="ti ti-location"></i>
                 </span>
-                <span class="hide-menu">Marketplace</span>
+                <span class="hide-menu">Live EV Drivers</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -171,6 +178,8 @@
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+              <a href="app.html" target="_blank" class="btn btn-primary">Get the App</a>
+              <div style="padding: 7px;"></div>
               <a href="sample-page.html" class="btn btn-primary">Get an Estimate</a>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
@@ -287,10 +296,10 @@
                         <h4 class="fw-semibold mb-3">6,820</h4>
                         <div class="d-flex align-items-center pb-1">
                           <span
-                            class="me-1 rounded-circle bg-danger round-20 d-flex align-items-center justify-co ntent-center">
-                            <i class="ti ti-arrow-down-right text-red"></i>
+                            class="me-1 rounded-circle bg-light-success  round-20 d-flex align-items-center justify-co ntent-center">
+                            <i class="ti ti-arrow-up-left text-success"></i>
                           </span>
-                          <p class="text-dark me-1 fs-3 mb-0">-9%</p>
+                          <p class="text-dark me-1 fs-3 mb-0">+9%</p>
                           <p class="fs-3 mb-0">last year</p>
                         </div>
                       </div>
@@ -305,6 +314,15 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div id="dialogBox2" class="dialog hidden">
+          <div class="dialog-content">
+            <span class="close2">&times;</span>
+            <div id="loadingDiv2" class="hidden">Loading...</div>
+            <div id="myDiv2" class="hidden" class="scrollable"><br>
+              <center><img src="../assets/images/others/route.gif" /></center><br>
             </div>
           </div>
         </div>
@@ -331,7 +349,7 @@
                       <span class="timeline-badge-border d-block flex-shrink-0"></span>
                     </div>
                     <div class="timeline-desc fs-3 text-dark mt-n1 fw-semibold">New Order Recorded <a
-                        href="javascript:void(0)" class="text-primary d-block fw-normal">#ML-3467</a>
+                        id="toggleButton2" class="text-primary d-block fw-normal">#ML-3467</a>
                     </div>
                   </li>
                   <li class="timeline-item d-flex position-relative overflow-hidden">
@@ -388,7 +406,10 @@
                           <h6 class="fw-semibold mb-0">Assigned Driver</h6>
                         </th>
                         <th class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0">Address</h6>
+                          <h6 class="fw-semibold mb-0">Pickup Address</h6>
+                        </th>
+                        <th class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">Drop Address</h6>
                         </th>
                         <th class="border-bottom-0">
                           <h6 class="fw-semibold mb-0">Status</h6>
@@ -403,10 +424,13 @@
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">1</h6></td>
                         <td class="border-bottom-0">
                             <h6 class="fw-semibold mb-1">Ankit Kumar</h6>
-                            <span class="fw-normal">Driver-EV</span>                          
+                            <span class="fw-normal">DL 08 HY 7674</span>                          
                         </td>
                         <td class="border-bottom-0">
-                          <p class="mb-0 fw-normal">House No. 123, ABC Street, Model Town,<br> Delhi, NCT</p>
+                          <p class="mb-0 fw-normal">Pizza Hut, Model Town,<br> Delhi, NCT</p>
+                        </td>
+                        <td class="border-bottom-0">
+                          <p class="mb-0 fw-normal">House No. 14, 24 Street, Sarojini Nagar,<br> Delhi, NCT</p>
                         </td>
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
@@ -414,17 +438,20 @@
                           </div>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">73.9KM</h6>
+                          <h6 class="fw-semibold mb-0 fs-4">13.9KM</h6>
                         </td>
                       </tr> 
                       <tr>
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">2</h6></td>
                         <td class="border-bottom-0">
                             <h6 class="fw-semibold mb-1">Rohan Gupta</h6>
-                            <span class="fw-normal">Driver-EV</span>                          
+                            <span class="fw-normal">KA 12 US 2398</span>                          
                         </td>
                         <td class="border-bottom-0">
-                          <p class="mb-0 fw-normal">Flat No. 456, XYZ Apartments, MG Road,<br> Bengaluru, Karnataka</p>
+                          <p class="mb-0 fw-normal">Vanilla Bakery, Koramangla,<br> Bengaluru, Karnataka</p>
+                        </td>
+                        <td class="border-bottom-0">
+                          <p class="mb-0 fw-normal">House no 23, XYZ Apartments, MG Road,<br> Bengaluru, Karnataka</p>
                         </td>
                         <td class="border-bottom-0">
                           <div class="d-flex align-items-center gap-2">
@@ -432,14 +459,17 @@
                           </div>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">124.5KM</h6>
+                          <h6 class="fw-semibold mb-0 fs-4">14.5KM</h6>
                         </td>
                       </tr> 
                       <tr>
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">3</h6></td>
                         <td class="border-bottom-0">
                             <h6 class="fw-semibold mb-1">Sanjay Joshi</h6>
-                            <span class="fw-normal">Driver-EV</span>                          
+                            <span class="fw-normal">TN 67 ES 8478</span>                          
+                        </td>
+                        <td class="border-bottom-0">
+                          <p class="mb-0 fw-normal">Subway, Dhandeeswaram,<br> Chennai, Tamil Nadu</p>
                         </td>
                         <td class="border-bottom-0">
                           <p class="mb-0 fw-normal">Villa No. 321, Rosewood Enclave, Velachery,<br> Chennai, Tamil Nadu</p>
@@ -452,14 +482,17 @@
                           </div>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">128.8KM</h6>
+                          <h6 class="fw-semibold mb-0 fs-4">9.8KM</h6>
                         </td>
                       </tr>      
                       <tr>
                         <td class="border-bottom-0"><h6 class="fw-semibold mb-0">4</h6></td>
                         <td class="border-bottom-0">
                             <h6 class="fw-semibold mb-1">Aryan Malhotra</h6>
-                            <span class="fw-normal">Driver-EV</span>                          
+                            <span class="fw-normal">MH 71 EK 6790</span>                          
+                        </td>
+                        <td class="border-bottom-0">
+                          <p class="mb-0 fw-normal">Dominoes,<br> Koregaon, Pune, Maharashtra</p>
                         </td>
                         <td class="border-bottom-0">
                           <p class="mb-0 fw-normal">Apartment No. 987, Lotus Towers,<br> Koregaon Park, Pune, Maharashtra</p>
@@ -470,7 +503,7 @@
                           </div>
                         </td>
                         <td class="border-bottom-0">
-                          <h6 class="fw-semibold mb-0 fs-4">72.4</h6>
+                          <h6 class="fw-semibold mb-0 fs-4">8.9KM</h6>
                         </td>
                       </tr>                       
                     </tbody>
@@ -556,33 +589,98 @@
         <div class="row">
           <div class="col-sm-6 col-xl-3" style="width: 100%;">
             <div class="card overflow-hidden rounded-2">
-              <div class="row">
+                <div style="font-family: Arial;
+                padding: 20px;
+                display: inline;">
+                <span class="heading">User Rating</span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <p>4.1 average based on 254 reviews.</p>
+                <hr style="border:3px solid #f1f1f1">
+                <div class="row">
+                  <div class="side">
+                    <div>5 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-5"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>150</div>
+                  </div>
+                  <div class="side">
+                    <div>4 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-4"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>63</div>
+                  </div>
+                  <div class="side">
+                    <div>3 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-3"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>15</div>
+                  </div>
+                  <div class="side">
+                    <div>2 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-2"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>6</div>
+                  </div>
+                  <div class="side">
+                    <div>1 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-1"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>2</div>
+                  </div>
+                  </div>
+                </div>
                 
-                <div class="container">
-              
+            
                   <!-- Clients Review Section -->
-                  <div class="reviewSection">
+                  <div class="reviewSection" style="color: white;">
           
                   <!-- Clients Review-1 Section Starts from Here  -->
                       <div class="reviewItem">
                           <div class="top">
                               <div class="clientImage">
-                                  <img src="../assets/images/products/s1.jpg" alt="">
+                                  <img src="../assets/images/profile/indian1.jpg" style="border-radius: 50%;" alt="">
                                   <span>Raju Sheoran</span>
                               </div>
                               <ul>
                                   <li><i class="fa-solid fa-star"></i></li>
                                   <li><i class="fa-solid fa-star"></i></li>
                                   <li><i class="fa-solid fa-star"></i></li>
-                                  <li><i class="fa-regular fa-star"></i></li>
-                                  <li><i class="fa-regular fa-star"></i></li>
+                                  <li><i class="fa-solid fa-star"></i></li>
+                                  <li><i class="fa-solid fa-star"></i></li> 
                               </ul>
                           </div>
                           <article>
-                              <p class="review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit beatae ipsa
-                                  voluptatibus perferendis quos eaque nemo error tempora harum quas, laudantium tenetur, neque,
-                                  facere exercitationem!</p>
-                              <p>Jan 01, 2023</p>
+                              <p class="review">I've tried several delivery services in the past, but none have matched the reliability and professionalism of this one. They understand the importance of timely deliveries, and they consistently exceed my expectations.</p>
+                              <p>Nov 23, 2023</p>
                           </article>
                       </div>
           
@@ -590,22 +688,20 @@
                       <div class="reviewItem">
                           <div class="top">
                               <div class="clientImage">
-                                  <img src="./client.png" alt="">
+                                  <img src="../assets/images/profile/indian2.jpg" style="border-radius: 50%; alt="">
                                   <span>Raju Sheoran</span>
                               </div>
                               <ul>
                                   <li><i class="fa-solid fa-star"></i></li>
                                   <li><i class="fa-solid fa-star"></i></li>
                                   <li><i class="fa-solid fa-star"></i></li>
-                                  <li><i class="fa-regular fa-star"></i></li>
-                                  <li><i class="fa-regular fa-star"></i></li>
+                                  <li><i class="fa-solid fa-star"></i></li>
+                                  <li><i class="fa-solid fa-star"></i></li>
                               </ul>
                           </div>
                           <article>
-                              <p class="review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit beatae ipsa
-                                  voluptatibus perferendis quos eaque nemo error tempora harum quas, laudantium tenetur, neque,
-                                  facere exercitationem!</p>
-                              <p>Jan 01, 2023</p>
+                              <p class="review">Using this delivery service has made my life so much easier. I no longer have to worry about running errands or missing deliveries. Their user-friendly app makes it simple to schedule and track deliveries, and their rates are competitive.</p>
+                              <p>Feb 14, 2024</p>
                           </article>
                       </div>
           
@@ -613,99 +709,25 @@
                       <div class="reviewItem">
                           <div class="top">
                               <div class="clientImage">
-                                  <img src="./client.png" alt="">
+                                  <img src="../assets/images/profile/indian3.jpg" style="border-radius: 50%; alt="">
                                   <span>Raju Sheoran</span>
                               </div>
                               <ul>
                                   <li><i class="fa-solid fa-star"></i></li>
                                   <li><i class="fa-solid fa-star"></i></li>
                                   <li><i class="fa-solid fa-star"></i></li>
-                                  <li><i class="fa-regular fa-star"></i></li>
+                                  <li><i class="fa-solid fa-star"></i></li>
                                   <li><i class="fa-regular fa-star"></i></li>
                               </ul>
                           </div>
                           <article>
-                              <p class="review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit beatae ipsa
-                                  voluptatibus perferendis quos eaque nemo error tempora harum quas, laudantium tenetur, neque,
-                                  facere exercitationem!</p>
-                              <p>Jan 01, 2023</p>
+                              <p class="review">"I can't say enough good things about this delivery service. Not only do they deliver quickly, but they also go above and beyond to ensure that my packages are handled with care. Their customer service team is responsive and helpful. </p>
+                              <p>Jan 02, 2024</p>
                           </article>
                       </div>
                   </div>
               </div>
-              <div style="font-family: Arial;
-              float: left;
-              width: 50%;
-              padding: 20px;
-              display: inline;">
-              <span class="heading">User Rating</span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <p>4.1 average based on 254 reviews.</p>
-              <hr style="border:3px solid #f1f1f1">
-              <div class="row">
-                <div class="side">
-                  <div>5 star</div>
-                </div>
-                <div class="middle">
-                  <div class="bar-container">
-                    <div class="bar-5"></div>
-                  </div>
-                </div>
-                <div class="side right">
-                  <div>150</div>
-                </div>
-                <div class="side">
-                  <div>4 star</div>
-                </div>
-                <div class="middle">
-                  <div class="bar-container">
-                    <div class="bar-4"></div>
-                  </div>
-                </div>
-                <div class="side right">
-                  <div>63</div>
-                </div>
-                <div class="side">
-                  <div>3 star</div>
-                </div>
-                <div class="middle">
-                  <div class="bar-container">
-                    <div class="bar-3"></div>
-                  </div>
-                </div>
-                <div class="side right">
-                  <div>15</div>
-                </div>
-                <div class="side">
-                  <div>2 star</div>
-                </div>
-                <div class="middle">
-                  <div class="bar-container">
-                    <div class="bar-2"></div>
-                  </div>
-                </div>
-                <div class="side right">
-                  <div>6</div>
-                </div>
-                <div class="side">
-                  <div>1 star</div>
-                </div>
-                <div class="middle">
-                  <div class="bar-container">
-                    <div class="bar-1"></div>
-                  </div>
-                </div>
-                <div class="side right">
-                  <div>2</div>
-                </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -770,7 +792,7 @@ h2 {
     margin: 1rem;
     cursor: pointer;
     border-radius: 10px;
-    background-color: #10102a;
+    background-color: rgb(38, 103, 38);
     border: 1px solid #10102a;
     transition: all .2s linear;
 }

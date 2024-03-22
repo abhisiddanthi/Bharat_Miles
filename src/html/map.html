@@ -11,6 +11,20 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
+<style>
+    /* Style for the popup */
+    .popup {
+      display: none;
+      position: absolute;
+      padding: 10px;
+      z-index: 1;
+    }
+
+    #toggleButton:hover {
+        cursor: pointer;
+    }
+  </style>
+
 <body>
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -27,7 +41,7 @@
           </div>
         </div>
         <!-- Sidebar navigation-->
-<nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+    <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
           <ul id="sidebarnav">
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -149,103 +163,65 @@
         </nav>
       </header>
       <!--  Header End -->
-      <div class="container-fluid">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Get an Estimate</h5>
-            <div id="dialogBox" class="dialog hidden">
-              <div class="dialog-content">
-                <span class="close">&times;</span>
-                <div id="loadingDiv" class="hidden">Loading...</div>
-                <div id="myDiv" class="hidden" class="scrollable">
-                  <center><img src="../assets/images/others/estimate.png" /></center><br>
-                  <div id="scrollableContent" class="scrollable">
-                    <div class="card">
-                      <div class="left-column">
-                        <img src="../assets/images/profile/uber1.png" alt="Image" class="card-image" styl xe="padding: 10px; width:200px; height: 200px;">
-                      </div>
-                      <div class="right-column">
-                        <div class="card-content">
-                          <h2 class="card-title">Aditya Sharma</h2>
-                          <p class="card-reviews">Reviews: 4.5/5</p>
-                          <p class="card-description">Aditya maintained a professional demeanor throughout the delivery process. Our experience with his service was good.</p>
-                          <button class="check-availability-btn" onclick="location.href='map.html'">Book</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="left-column">
-                        <img src="../assets/images/profile/driver.jpg" alt="Image" class="card-image" style="padding: 10px; width:200px; height: 200px;">
-                      </div>
-                      <div class="right-column">
-                        <div class="card-content">
-                          <h2 class="card-title">Vikram Patel</h2>
-                          <p class="card-reviews">Reviews: 4/5</p>
-                          <p class="card-description">Vikram upheld a professional conduct from start to finish during the delivery process. Our experience with his service was great.</p>
-                          <button class="check-availability-btn" onclick="location.href='map.html'">Book</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="left-column">
-                        <img src="../assets/images/profile/driver3.jpg" alt="Image" class="card-image" style="padding: 10px; width:200px; height: 200px;">
-                      </div>
-                      <div class="right-column">
-                        <div class="card-content">
-                          <h2 class="card-title">Rajesh Singh</h2>
-                          <p class="card-reviews">Reviews: 4.5/5</p>
-                          <p class="card-description">He maintained a professional demeanor throughout the delivery process, ensuring the safe transfer of our package. It was a satisfactory delivery experience.</p>
-                          <button class="check-availability-btn" onclick="location.href='map.html'">Book</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="left-column">
-                        <img src="../assets/images/profile/driver2.jpg" alt="Image" class="card-image" style="padding: 10px; width:200px; height: 200px;">
-                      </div>
-                      <div class="right-column">
-                        <div class="card-content">
-                          <h2 class="card-title">Siddharth Kapoor</h2>
-                          <p class="card-reviews">Reviews: 4.5/5</p>
-                          <p class="card-description">Siddharth's professionalism was evident throughout the delivery journey. Our interaction with his service was commendable.</p>
-                          <button class="check-availability-btn" onclick="location.href='map.html'">Book</button>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Add more places here -->
-                  </div>
-                </div>
-              </div>
+      <div><br><br><br>
+        <div id="dialogBox" class="dialog hidden">
+          <div class="dialog-content">
+            <span class="close">&times;</span>
+            <div id="loadingDiv" class="hidden">Loading...</div>
+            <div id="myDiv" class="hidden" class="scrollable"><br>
+              <center<p>Your order has been confirmed, the driver will arrive at the location soon</p></center><br>
+              <center<p>For more information please contact   <a href="#">1800 180 1961</a></p></center>
+              <ul id="sidebarnav">
+              <li class="sidebar-item">
+                <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
+              </li>
+              </ul>
             </div>
-            <form autocomplete="off">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Pickup Address</label><br>
-                <div class="autocomplete" style="width:1050px;">
-                <input type="email" class="form-control" id="pickup" type="text" name="myCountry">
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Drop Address</label><br>
-                <div class="autocomplete" style="width:1050px;">
-                <input type="email" class="form-control" id="drop" type="text" name="myCountry">
-                </div>
-              </div>
-              <div class="mb-4">
-                <label for="exampleInputPassword1" class="form-label">Phone Number</label>
-                <input type="phone" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-4">
-                <label for="exampleInputPassword1" class="form-label">Name</label>
-                <input type="name" class="form-control" id="exampleInputPassword1">
-              </div>
-            </form>
-            <button class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" id="toggleButton">Estimate</button>
           </div>
         </div>
+        <div style="position:relative">
+            <!-- Image -->
+            <center><img id="toggleButton" src="../assets/images/others/map.png" alt="Your Image" width="80%" /></center>
+            <!-- Popup -->
+            <div id="popup" class="popup">
+              <img src="../assets/images/others/pin.png" width="30px" onover>
+            </div>
+        </div>     
       </div>
     </div>
   </div>
 
+
+  <script>
+    // Get references to the image and the popup
+    var image = document.getElementById("toggleButton");
+    var popup = document.getElementById("popup");
+    
+    // Show popup at click location
+    image.addEventListener("click", function(event) {
+      // Show popup
+      popup.style.display = "block";
+    
+      // Calculate the offset of the image relative to the document
+      var rect = image.getBoundingClientRect();
+    
+      // Position popup at click location relative to the viewport
+      popup.style.left = (event.clientX - rect.left + 100) + "px";
+      popup.style.top = (event.clientY - rect.top - 20) + "px";
+    });
+    
+    // Hide popup when clicking outside of it
+    window.addEventListener("click", function(event) {
+      if (event.target !== image && event.target !== popup) {
+        popup.style.display = "none";
+      }
+    });
+  </script>
 
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -253,7 +229,5 @@
   <script src="../assets/js/app.min.js"></script>
   <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
   <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/auto.js"></script>
 </body>
 
-</html>
